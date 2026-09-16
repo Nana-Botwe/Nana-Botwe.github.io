@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Botwe;Isaac Banson;;;
+FN:Isaac Banson Botwe
+NICKNAME:Nana
+TITLE:Software Engineer
+ORG:KAAF University
+EMAIL;TYPE=INTERNET,PREF:isaacnanabotwe@gmail.com
+TEL;TYPE=CELL,VOICE:+233550100160
+ADR;TYPE=WORK:;;;Accra;;;Ghana
+URL:https://nana-botwe.github.io/
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/isaac-nana-botwe-443491205
+NOTE:Software Engineer - PHP, Laravel, MySQL, LMS & ERP integration.
+END:VCARD
