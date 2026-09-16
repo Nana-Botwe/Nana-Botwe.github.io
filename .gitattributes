@@ -1,0 +1,2 @@
+# vCard files must keep CRLF line endings
+*.vcf -text
