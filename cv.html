@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV | Isaac Banson Botwe</title>
+  <meta name="description" content="Curriculum vitae of Isaac Banson Botwe, Software Engineer.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07110d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/icons/icon-180.png">
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #060c0a;
+      color: #f1f7f4;
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .8rem clamp(1rem, 3vw, 1.5rem);
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      background: #07110d;
+    }
+    header strong { display: block; }
+    header small { color: #a3b8ae; }
+    a.back {
+      padding: .55rem 1rem;
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 999px;
+      color: #fff;
+      font-weight: 600;
+      font-size: .9rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    a.back:hover { border-color: #34d399; color: #34d399; }
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      padding: clamp(1rem, 3vw, 2rem);
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+    }
+    main img {
+      display: block;
+      width: min(900px, 100%);
+      height: auto;
+      margin-inline: auto;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 20px 60px -20px rgba(0, 0, 0, .8);
+      pointer-events: none;
+    }
+    @media print { body { display: none; } }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <strong>Isaac Banson Botwe</strong>
+      <small>Curriculum Vitae</small>
+    </div>
+    <a class="back" href="./">&larr; Back to profile</a>
+  </header>
+  <main>
+    <img src="assets/img/cv/cv-page-1.webp" alt="CV of Isaac Banson Botwe, page 1 of 2" width="1429" height="2021" draggable="false">
+    <img src="assets/img/cv/cv-page-2.webp" alt="CV of Isaac Banson Botwe, page 2 of 2" width="1429" height="2021" draggable="false" loading="lazy">
+  </main>
+  <script>
+    ['contextmenu', 'dragstart'].forEach(function (type) {
+      document.addEventListener(type, function (e) { e.preventDefault(); });
+    });
+  </script>
+</body>
+
+</html>

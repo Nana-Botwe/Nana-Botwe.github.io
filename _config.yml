@@ -1,0 +1,3 @@
+# Keep the Node.js contact service source out of the published GitHub Pages site
+exclude:
+  - contact-api

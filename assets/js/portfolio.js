@@ -511,6 +511,12 @@
         $('.modal-sum', modal).textContent = $('.project-sum', card).textContent.trim();
         $('.modal-tags', modal).replaceChildren(...$$('.tags span', card).map(t => t.cloneNode(true)));
         $('.modal-body', modal).replaceChildren(...Array.from($('.project-details', card).children).map(n => n.cloneNode(true)));
+        const link = $('.modal-link', modal);
+        link.hidden = !card.dataset.link;
+        if (card.dataset.link) {
+          link.href = card.dataset.link;
+          link.replaceChildren(card.dataset.linkLabel || 'Visit', ' ', icon('bx-link-external'));
+        }
         modal.showModal();
       });
     });
@@ -543,7 +549,7 @@
       img.src = $('.shot-open', shot).getAttribute('href');
       img.alt = thumb.alt;
       const title = $('figcaption strong', shot).textContent;
-      const sub = $('figcaption span', shot).textContent;
+      const sub = $('.shot-desc', shot).textContent;
       caption.replaceChildren(el('strong', null, title), el('span', null, sub), el('em', null, `${at + 1} / ${shots.length}`));
     };
 
@@ -608,9 +614,55 @@
     }, 1800);
   }));
 
-  /* ---------- Contact form → email app ---------- */
+  /* ---------- CV viewer (view only, no download) ---------- */
+  const cvViewer = $('#cv-viewer');
+  if (cvViewer && typeof cvViewer.showModal === 'function') {
+    const pages = $('.cv-pages', cvViewer);
+    const zoomLabel = $('.cv-zoom', cvViewer);
+    const ZOOMS = [0.6, 0.8, 1, 1.25, 1.5, 2];
+    let zoom = 2;
+
+    const setZoom = index => {
+      zoom = Math.max(0, Math.min(ZOOMS.length - 1, index));
+      pages.style.setProperty('--cv-zoom', ZOOMS[zoom]);
+      zoomLabel.textContent = `${Math.round(ZOOMS[zoom] * 100)}%`;
+    };
+    const openCv = () => {
+      // Page images load only when someone opens the CV
+      $$('img[data-src]', pages).forEach(img => {
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+      });
+      setZoom(2);
+      cvViewer.showModal();
+      pages.scrollTop = 0;
+    };
+
+    $$('[data-cv-open]').forEach(link => link.addEventListener('click', e => {
+      e.preventDefault();
+      openCv();
+    }));
+    $$('[data-cv-zoom]', cvViewer).forEach(btn => btn.addEventListener('click', () => {
+      setZoom(zoom + Number(btn.dataset.cvZoom));
+    }));
+    $('.cv-close', cvViewer).addEventListener('click', () => cvViewer.close());
+    cvViewer.addEventListener('keydown', e => {
+      if (e.key === '+' || e.key === '=') setZoom(zoom + 1);
+      if (e.key === '-') setZoom(zoom - 1);
+    });
+    // Discourage saving: no context menu or dragging on the pages
+    ['contextmenu', 'dragstart'].forEach(type => cvViewer.addEventListener(type, e => e.preventDefault()));
+    cvViewer.addEventListener('close', () => {
+      if (location.hash === '#cv') history.replaceState(null, '', location.pathname + location.search);
+    });
+    if (location.hash === '#cv') openCv();
+  }
+
+  /* ---------- Contact form ---------- */
   const form = $('#contact-form');
   if (form) {
+    const submitBtn = $('button[type="submit"]', form);
+    const status = $('.form-status', form);
     const rules = {
       name: v => v.trim().length > 1,
       email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
@@ -630,20 +682,107 @@
       });
     });
 
-    form.addEventListener('submit', e => {
+    const readForm = () => {
+      const f = form.elements;
+      return {
+        name: f.name.value.trim(),
+        email: f.email.value.trim(),
+        company: f.company.value.trim(),
+        reason: f.reason.value,
+        message: f.message.value.trim(),
+        website: f.website.value
+      };
+    };
+
+    const showStatus = (kind, title, detail) => {
+      const icons = { success: 'bx-check-circle', error: 'bx-error-circle', info: 'bx-info-circle' };
+      const text = el('div');
+      text.append(el('strong', null, title));
+      if (detail) text.append(el('p', null, detail));
+      status.className = `form-status is-${kind}`;
+      status.replaceChildren(icon(icons[kind]), text);
+      status.hidden = false;
+    };
+
+    const setBusy = busy => {
+      submitBtn.classList.toggle('is-busy', busy);
+      submitBtn.disabled = busy;
+      $('i', submitBtn).className = busy ? 'bx bx-loader-alt bx-spin' : 'bx bx-send';
+      $('span', submitBtn).textContent = busy ? 'Sending…' : 'Send message';
+    };
+
+    // Used when the message service can't be reached, so nothing is lost
+    const openEmailApp = data => {
+      const subject = `${data.reason}: ${data.name}${data.company ? ` (${data.company})` : ''}`;
+      const body = [data.message, '', '--', data.name, data.company, data.email]
+        .filter((line, i) => i < 3 || line)
+        .join('\n');
+      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    };
+
+    const post = async (endpoint, data) => {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 15000);
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data),
+          signal: controller.signal
+        });
+        const json = await res.json().catch(() => ({}));
+        return { res, json };
+      } finally {
+        clearTimeout(timer);
+      }
+    };
+
+    form.addEventListener('submit', async e => {
       e.preventDefault();
+      status.hidden = true;
       const invalid = Object.keys(rules).map(n => form.elements[n]).filter(input => !validate(input));
       if (invalid.length) {
         invalid[0].focus();
         return;
       }
-      const f = form.elements;
-      const name = f.name.value.trim();
-      const company = f.company.value.trim();
-      const subject = `${f.reason.value}: ${name}${company ? ` (${company})` : ''}`;
-      const body = [f.message.value.trim(), '', '--', name, company, f.email.value.trim()].filter((line, i) => i < 3 || line).join('\n');
-      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      toast('Opening your email app…');
+      const data = readForm();
+      const endpoint = (form.dataset.endpoint || '').trim();
+
+      if (!endpoint) {
+        openEmailApp(data);
+        showStatus('info', 'Opening your email app…', 'Your message is filled in and ready to send.');
+        return;
+      }
+
+      setBusy(true);
+      try {
+        const { res, json } = await post(endpoint, data);
+        if (res.status === 422 && json.errors) {
+          Object.keys(json.errors).forEach(name => {
+            const input = form.elements[name];
+            if (input && rules[name]) {
+              input.closest('.field').classList.add('has-error');
+              input.setAttribute('aria-invalid', 'true');
+            }
+          });
+          showStatus('error', 'Please check the highlighted fields.', Object.values(json.errors).join(' '));
+          return;
+        }
+        if (res.status === 429) {
+          showStatus('error', 'Too many messages in a short time.', 'Please try again in a little while, or email me directly.');
+          return;
+        }
+        if (!res.ok || !json.ok) throw new Error(json.error || `HTTP ${res.status}`);
+
+        form.reset();
+        showStatus('success', `Thank you, ${data.name.split(' ')[0]}. Your message has been received.`, "I'll get back to you soon.");
+        toast('Message sent');
+      } catch (err) {
+        openEmailApp(data);
+        showStatus('info', "The message service isn't reachable right now.", "I've opened your email app with your message ready to send instead.");
+      } finally {
+        setBusy(false);
+      }
     });
   }
 })();

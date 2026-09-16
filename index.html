@@ -100,8 +100,8 @@
           <i class='bx bx-moon' aria-hidden="true"></i>
           <i class='bx bx-sun' aria-hidden="true"></i>
         </button>
-        <a class="btn btn-primary btn-sm nav-cv" href="Isaac_Banson_Botwe_CV.pdf" download>
-          <i class='bx bx-download' aria-hidden="true"></i><span>CV</span>
+        <a class="btn btn-primary btn-sm nav-cv" href="cv.html" data-cv-open aria-haspopup="dialog">
+          <i class='bx bx-show' aria-hidden="true"></i><span>CV</span>
         </a>
         <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
           <i class='bx bx-menu' aria-hidden="true"></i>
@@ -129,8 +129,8 @@
             from requirements and database design through deployment, user training and day-to-day support.
           </p>
           <div class="hero-cta reveal">
-            <a class="btn btn-primary btn-lg" href="Isaac_Banson_Botwe_CV.pdf" download>
-              <i class='bx bx-download' aria-hidden="true"></i> Download CV
+            <a class="btn btn-primary btn-lg" href="cv.html" data-cv-open aria-haspopup="dialog">
+              <i class='bx bx-file' aria-hidden="true"></i> View my CV
             </a>
             <a class="btn btn-outline-light btn-lg" href="#contact">
               <i class='bx bx-mail-send' aria-hidden="true"></i> Get in touch
@@ -158,12 +158,12 @@
             </div>
           </div>
           <div class="code-card" aria-hidden="true">
-            <div class="code-bar"><span></span><span></span><span></span><em>engineer.php</em></div>
-<pre><code><span class="c-kw">$engineer</span> = [
-  <span class="c-str">'name'</span>  =&gt; <span class="c-str">'Isaac Banson Botwe'</span>,
-  <span class="c-str">'stack'</span> =&gt; [<span class="c-str">'PHP'</span>, <span class="c-str">'Laravel'</span>, <span class="c-str">'MySQL'</span>],
-  <span class="c-str">'ships'</span> =&gt; [<span class="c-str">'LMS'</span>, <span class="c-str">'Portals'</span>, <span class="c-str">'ERP'</span>],
-];<span class="c-caret"></span></code></pre>
+            <div class="code-bar"><span></span><span></span><span></span><em>engineer.ts</em></div>
+<pre><code><span class="c-kw">const</span> engineer: <span class="c-type">Engineer</span> = {
+  name: <span class="c-str">'Isaac Banson Botwe'</span>,
+  stack: [<span class="c-str">'TypeScript'</span>, <span class="c-str">'SQL'</span>],
+  ships: [<span class="c-str">'LMS'</span>, <span class="c-str">'Portals'</span>, <span class="c-str">'ERP'</span>],
+};<span class="c-caret"></span></code></pre>
           </div>
         </div>
       </div>
@@ -244,8 +244,8 @@
             </dl>
 
             <div class="btn-row reveal">
-              <a class="btn btn-primary" href="Isaac_Banson_Botwe_CV.pdf" download><i class='bx bx-download' aria-hidden="true"></i> Download CV</a>
-              <a class="btn btn-soft" href="Isaac_Banson_Botwe_CV.pdf" target="_blank" rel="noopener"><i class='bx bx-link-external' aria-hidden="true"></i> View CV</a>
+              <a class="btn btn-primary" href="cv.html" data-cv-open aria-haspopup="dialog"><i class='bx bx-file' aria-hidden="true"></i> View my CV</a>
+              <a class="btn btn-soft" href="#projects"><i class='bx bx-rocket' aria-hidden="true"></i> See live projects</a>
               <a class="btn btn-soft" href="assets/isaac-banson-botwe.vcf" download="Isaac-Banson-Botwe.vcf"><i class='bx bx-user-plus' aria-hidden="true"></i> Save contact</a>
             </div>
           </div>
@@ -635,17 +635,195 @@
         <div class="section-head">
           <p class="eyebrow reveal"><span>04</span> Projects</p>
           <h2 class="section-title reveal">Systems I've <span class="accent-text">designed &amp; shipped</span></h2>
-          <p class="section-lead reveal">Institutional platforms from my roles, plus products I've built on my own time under INB IT Firm. Select a card for details.</p>
+          <p class="section-lead reveal">Live products I build and run under INB IT Firm, platforms from my university roles, and client websites. Open any system to see it running.</p>
         </div>
 
-        <div class="filter-bar reveal" role="group" aria-label="Filter projects">
-          <button type="button" class="chip-btn is-active" data-project-filter="all">All</button>
-          <button type="button" class="chip-btn" data-project-filter="institutional">University platforms</button>
-          <button type="button" class="chip-btn" data-project-filter="personal">INB IT Firm</button>
-          <button type="button" class="chip-btn" data-project-filter="infrastructure">Infrastructure</button>
+        <!-- Live systems gallery -->
+        <div class="sub-head is-first reveal">
+          <h3>Live on the web</h3>
+          <div class="filter-bar compact" role="group" aria-label="Filter live work">
+            <button type="button" class="chip-btn is-active" data-gallery-filter="all">All</button>
+            <button type="button" class="chip-btn" data-gallery-filter="software">Software systems</button>
+            <button type="button" class="chip-btn" data-gallery-filter="ecommerce">E-commerce</button>
+            <button type="button" class="chip-btn" data-gallery-filter="web">Websites</button>
+          </div>
+        </div>
+        <div class="gallery">
+          <figure class="shot reveal" data-cat="software">
+            <a class="shot-open" href="assets/img/work/inb-school-system.jpg" aria-label="Enlarge screenshot of INB School System">
+              <img src="assets/img/work/inb-school-system.jpg" alt="INB School System homepage" width="1200" height="750" loading="lazy">
+              <span class="shot-badge"><span class="pulse" aria-hidden="true"></span> Live</span>
+            </a>
+            <figcaption>
+              <span class="shot-kicker">SaaS &middot; Education</span>
+              <strong>INB School System</strong>
+              <span class="shot-desc">Cloud school management for basic, senior high and tertiary schools: fees with QR payments, QR attendance, HR &amp; payroll and virtual learning, installable as a web app.</span>
+              <a class="shot-link" href="https://inbschool.inbitfirm.org/" target="_blank" rel="noopener">inbschool.inbitfirm.org <i class='bx bx-link-external' aria-hidden="true"></i></a>
+            </figcaption>
+          </figure>
+          <figure class="shot reveal" data-cat="software">
+            <a class="shot-open" href="assets/img/work/blessed-assurance-church-system.jpg" aria-label="Enlarge screenshot of the Blessed Assurance AG church system">
+              <img src="assets/img/work/blessed-assurance-church-system.jpg" alt="Blessed Assurance AG church system sign-in page" width="1200" height="750" loading="lazy">
+              <span class="shot-badge"><span class="pulse" aria-hidden="true"></span> Live</span>
+            </a>
+            <figcaption>
+              <span class="shot-kicker">Church administration</span>
+              <strong>Blessed Assurance AG Church System</strong>
+              <span class="shot-desc">Membership, attendance, finance, online giving, sermons, SMS announcements and church chat, with reports across every module and fingerprint or PIN sign-in.</span>
+              <a class="shot-link" href="https://ba.inbitfirm.org/" target="_blank" rel="noopener">ba.inbitfirm.org <i class='bx bx-link-external' aria-hidden="true"></i></a>
+            </figcaption>
+          </figure>
+          <figure class="shot reveal" data-cat="software">
+            <a class="shot-open" href="assets/img/work/file-system-management.jpg" aria-label="Enlarge screenshot of File System Management">
+              <img src="assets/img/work/file-system-management.jpg" alt="File System Management sign-in page" width="1200" height="750" loading="lazy">
+              <span class="shot-badge"><span class="pulse" aria-hidden="true"></span> Live</span>
+            </a>
+            <figcaption>
+              <span class="shot-kicker">Document management</span>
+              <strong>File System Management</strong>
+              <span class="shot-desc">Lets an institution organise, version and share its files, with role-based access, automatic versioning, storage and activity insights, and a full audit trail.</span>
+              <a class="shot-link" href="https://filesystem.inbitfirm.org/" target="_blank" rel="noopener">filesystem.inbitfirm.org <i class='bx bx-link-external' aria-hidden="true"></i></a>
+            </figcaption>
+          </figure>
+          <figure class="shot reveal" data-cat="software">
+            <a class="shot-open" href="assets/img/work/kaaf-task-system.jpg" aria-label="Enlarge screenshot of the KAAF Task System">
+              <img src="assets/img/work/kaaf-task-system.jpg" alt="KAAF Task System sign-in page" width="1200" height="750" loading="lazy">
+              <span class="shot-badge"><span class="pulse" aria-hidden="true"></span> Live</span>
+            </a>
+            <figcaption>
+              <span class="shot-kicker">KAAF University &middot; ICT Office</span>
+              <strong>KAAF Task System</strong>
+              <span class="shot-desc">Recurring daily and weekly tasks created automatically each morning, a 07:00 email reminder, and a weekly report on the manager's dashboard every Saturday.</span>
+              <a class="shot-link" href="https://task.inbitfirm.org/" target="_blank" rel="noopener">task.inbitfirm.org <i class='bx bx-link-external' aria-hidden="true"></i></a>
+            </figcaption>
+          </figure>
+          <figure class="shot reveal" data-cat="ecommerce">
+            <a class="shot-open" href="assets/img/work/cape-coast-mall.jpg" aria-label="Enlarge screenshot of Cape Coast Mall">
+              <img src="assets/img/work/cape-coast-mall.jpg" alt="Cape Coast Mall online shop homepage" width="1200" height="750" loading="lazy">
+              <span class="shot-badge"><span class="pulse" aria-hidden="true"></span> Live</span>
+            </a>
+            <figcaption>
+              <span class="shot-kicker">Multi-store marketplace</span>
+              <strong>Cape Coast Mall</strong>
+              <span class="shot-desc">Online mall where shoppers browse by category or store, see new arrivals and top sellers, check out, and track delivery orders across Cape Coast.</span>
+              <a class="shot-link" href="https://capecoastmall.inbitfirm.org/" target="_blank" rel="noopener">capecoastmall.inbitfirm.org <i class='bx bx-link-external' aria-hidden="true"></i></a>
+            </figcaption>
+          </figure>
+          <figure class="shot reveal" data-cat="ecommerce">
+            <a class="shot-open" href="assets/img/work/ad-afida-import.jpg" aria-label="Enlarge screenshot of AD Afida Import">
+              <img src="assets/img/work/ad-afida-import.jpg" alt="AD Afida Import storefront homepage" width="1200" height="750" loading="lazy">
+              <span class="shot-badge"><span class="pulse" aria-hidden="true"></span> Live</span>
+            </a>
+            <figcaption>
+              <span class="shot-kicker">Import &amp; wholesale store</span>
+              <strong>AD Afida Import</strong>
+              <span class="shot-desc">Storefront for goods imported from China, the USA and Turkey. Customers see real product photos and videos, order online and track deliveries anywhere in Ghana.</span>
+              <a class="shot-link" href="https://afridaimport.inbitfirm.org/" target="_blank" rel="noopener">afridaimport.inbitfirm.org <i class='bx bx-link-external' aria-hidden="true"></i></a>
+            </figcaption>
+          </figure>
+          <figure class="shot reveal" data-cat="web">
+            <a class="shot-open" href="assets/img/work/inb-it-firm-website.jpg" aria-label="Enlarge screenshot of the INB IT Firm website">
+              <img src="assets/img/work/inb-it-firm-website.jpg" alt="INB IT Firm company website homepage" width="1200" height="750" loading="lazy">
+              <span class="shot-badge"><span class="pulse" aria-hidden="true"></span> Live</span>
+            </a>
+            <figcaption>
+              <span class="shot-kicker">Company website</span>
+              <strong>INB IT Firm</strong>
+              <span class="shot-desc">My IT company's site, with services, a projects portfolio, a blog, quote requests, live chat and built-in translation, running behind strict security headers.</span>
+              <a class="shot-link" href="https://inbitfirm.org/" target="_blank" rel="noopener">inbitfirm.org <i class='bx bx-link-external' aria-hidden="true"></i></a>
+            </figcaption>
+          </figure>
+          <figure class="shot reveal" data-cat="web">
+            <a class="shot-open" href="assets/img/work/charlse-angels-academy.jpg" aria-label="Enlarge screenshot of Charlse-Angels Academy">
+              <img src="assets/img/work/charlse-angels-academy.jpg" alt="Charlse-Angels Academy school website homepage" width="1200" height="565" loading="lazy">
+            </a>
+            <figcaption>
+              <span class="shot-kicker">School website</span>
+              <strong>Charlse-Angels Academy</strong>
+              <span class="shot-desc">School website with an image slider, gallery, branches, teachers and online registration.</span>
+            </figcaption>
+          </figure>
+          <figure class="shot reveal" data-cat="web">
+            <a class="shot-open" href="assets/img/work/gabraham-foundation.jpg" aria-label="Enlarge screenshot of Gabraham Child Raise Foundation">
+              <img src="assets/img/work/gabraham-foundation.jpg" alt="Gabraham Child Raise Foundation NGO website with sponsor and donate actions" width="1200" height="611" loading="lazy">
+            </a>
+            <figcaption>
+              <span class="shot-kicker">NGO website</span>
+              <strong>Gabraham Child Raise Foundation</strong>
+              <span class="shot-desc">Charity website with activities, projects and gallery pages, plus sponsor-a-child and donation calls to action.</span>
+            </figcaption>
+          </figure>
+          <figure class="shot reveal" data-cat="web">
+            <a class="shot-open" href="assets/img/work/ttu-online-newsportal.jpg" aria-label="Enlarge screenshot of TTU Online Newsportal">
+              <img src="assets/img/work/ttu-online-newsportal.jpg" alt="TTU Online Newsportal with news, category list and search" width="1200" height="605" loading="lazy">
+            </a>
+            <figcaption>
+              <span class="shot-kicker">University news portal</span>
+              <strong>TTU Online Newsportal</strong>
+              <span class="shot-desc">News portal for Takoradi Technical University, organised by faculty, with search and forums.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Project case notes -->
+        <div class="sub-head reveal">
+          <h3>More projects</h3>
+          <div class="filter-bar compact" role="group" aria-label="Filter projects">
+            <button type="button" class="chip-btn is-active" data-project-filter="all">All</button>
+            <button type="button" class="chip-btn" data-project-filter="institutional">University platforms</button>
+            <button type="button" class="chip-btn" data-project-filter="personal">INB IT Firm</button>
+            <button type="button" class="chip-btn" data-project-filter="infrastructure">Infrastructure</button>
+          </div>
         </div>
 
         <div class="project-grid">
+          <article class="project-card reveal" data-cat="institutional">
+            <button type="button" class="project-open" aria-haspopup="dialog">
+              <span class="project-top">
+                <span class="project-icon"><i class='bx bx-transfer-alt' aria-hidden="true"></i></span>
+                <span class="project-kicker">KAAF University &middot; Current</span>
+              </span>
+              <span class="project-name">University Platforms &amp; Integrations</span>
+              <span class="project-sum">Student portals, LMS and research tools, plus integrations that connect Moodle, Canvas, PeopleSoft and Banner to internal systems.</span>
+              <span class="tags"><span>Moodle</span><span>Canvas</span><span>PeopleSoft</span><span>Banner</span></span>
+              <span class="project-more">View details <i class='bx bx-right-arrow-alt' aria-hidden="true"></i></span>
+            </button>
+            <div class="project-details">
+              <p class="pd-role"><strong>My role:</strong> Software Engineer, responsible for delivering and supporting core academic and administrative platforms.</p>
+              <h4>Scope</h4>
+              <ul>
+                <li>Student portals, learning management systems and research tools</li>
+                <li>Integrating LMS (Moodle, Canvas) and ERP (PeopleSoft, Banner) platforms with internal systems</li>
+                <li>Database management with backup and recovery procedures</li>
+                <li>Data analytics and reporting for management</li>
+                <li>Custom research software built with faculty and researchers</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="institutional" data-link="https://task.inbitfirm.org/" data-link-label="Open the live system">
+            <button type="button" class="project-open" aria-haspopup="dialog">
+              <span class="project-top">
+                <span class="project-icon"><i class='bx bx-task' aria-hidden="true"></i></span>
+                <span class="project-kicker">KAAF University &middot; ICT Office</span>
+              </span>
+              <span class="project-name">KAAF Task System</span>
+              <span class="project-sum">Task tracking for the ICT office: recurring work set up once, a 07:00 email reminder each day, and a weekly report that writes itself.</span>
+              <span class="tags"><span>Recurring tasks</span><span>Email reminders</span><span>Reports</span></span>
+              <span class="project-more">View details <i class='bx bx-right-arrow-alt' aria-hidden="true"></i></span>
+            </button>
+            <div class="project-details">
+              <p class="pd-role"><strong>Live at:</strong> <a href="https://task.inbitfirm.org/" target="_blank" rel="noopener">task.inbitfirm.org</a></p>
+              <h4>What it does</h4>
+              <ul>
+                <li>Staff record the tasks they are assigned</li>
+                <li>Repeating work is set up once, and daily and weekly tasks are generated each morning</li>
+                <li>An email reminder goes out at 07:00 every day</li>
+                <li>A full report appears on the manager's dashboard every Saturday</li>
+              </ul>
+            </div>
+          </article>
+
           <article class="project-card reveal" data-cat="institutional">
             <button type="button" class="project-open" aria-haspopup="dialog">
               <span class="project-top">
@@ -674,30 +852,6 @@
           <article class="project-card reveal" data-cat="institutional">
             <button type="button" class="project-open" aria-haspopup="dialog">
               <span class="project-top">
-                <span class="project-icon"><i class='bx bx-transfer-alt' aria-hidden="true"></i></span>
-                <span class="project-kicker">KAAF University &middot; Current</span>
-              </span>
-              <span class="project-name">University Platforms &amp; Integrations</span>
-              <span class="project-sum">Student portals, LMS and research tools, plus integrations that connect Moodle, Canvas, PeopleSoft and Banner to internal systems.</span>
-              <span class="tags"><span>Moodle</span><span>Canvas</span><span>PeopleSoft</span><span>Banner</span></span>
-              <span class="project-more">View details <i class='bx bx-right-arrow-alt' aria-hidden="true"></i></span>
-            </button>
-            <div class="project-details">
-              <p class="pd-role"><strong>My role:</strong> Software Engineer, responsible for delivering and supporting core academic and administrative platforms.</p>
-              <h4>Scope</h4>
-              <ul>
-                <li>Student portals, learning management systems and research tools</li>
-                <li>Integrating LMS (Moodle, Canvas) and ERP (PeopleSoft, Banner) platforms with internal systems</li>
-                <li>Database management with backup and recovery procedures</li>
-                <li>Data analytics and reporting for management</li>
-                <li>Custom research software built with faculty and researchers</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-cat="institutional">
-            <button type="button" class="project-open" aria-haspopup="dialog">
-              <span class="project-top">
                 <span class="project-icon"><i class='bx bx-globe' aria-hidden="true"></i></span>
                 <span class="project-kicker">Institutional web</span>
               </span>
@@ -718,27 +872,121 @@
             </div>
           </article>
 
-          <article class="project-card reveal" data-cat="personal">
+          <article class="project-card reveal" data-cat="personal" data-link="https://inbschool.inbitfirm.org/" data-link-label="Open the live system">
             <button type="button" class="project-open" aria-haspopup="dialog">
               <span class="project-top">
                 <span class="project-icon gold"><i class='bx bx-qr-scan' aria-hidden="true"></i></span>
-                <span class="project-kicker">INB IT Firm &middot; Personal build</span>
+                <span class="project-kicker">INB IT Firm &middot; Schools across Ghana</span>
               </span>
               <span class="project-name">INB School Management System</span>
-              <span class="project-sum">A modular school administration platform I built on my own, covering admissions, QR-code attendance, fees with online payments, and exams.</span>
-              <span class="tags"><span>QR attendance</span><span>Payments</span><span>Role-based access</span><span>Dashboards</span></span>
+              <span class="project-sum">A school administration platform I built on my own, now running as the cloud INB School System: admissions, attendance, results, fees and payroll.</span>
+              <span class="tags"><span>QR attendance</span><span>Fees &amp; payments</span><span>HR &amp; payroll</span><span>PWA</span></span>
               <span class="project-more">View details <i class='bx bx-right-arrow-alt' aria-hidden="true"></i></span>
             </button>
             <div class="project-details">
               <p class="pd-role"><strong>My role:</strong> Sole builder, from concept and data model to modules and dashboards.</p>
               <h4>Modules</h4>
               <ul>
-                <li>Admissions</li>
-                <li>Attendance by QR-code scanning</li>
-                <li>Fee management with payment integration</li>
-                <li>Examinations</li>
-                <li>Role-based access control</li>
-                <li>Reporting dashboards</li>
+                <li>Admissions, plus student and staff records</li>
+                <li>Class and subject allocation</li>
+                <li>Attendance, including QR-code scanning</li>
+                <li>Continuous assessment and exam scores, with terminal reports generated automatically</li>
+                <li>School fees and billing, with QR-scan payments</li>
+                <li>HR &amp; payroll, and online teaching and virtual learning</li>
+                <li>Role-based access for heads, teachers and bursars, plus reporting dashboards</li>
+                <li>Installable web app (PWA) and a custom domain for each school</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="personal" data-link="https://inbitfirm.org/projects?p=school-fees-system" data-link-label="View on inbitfirm.org">
+            <button type="button" class="project-open" aria-haspopup="dialog">
+              <span class="project-top">
+                <span class="project-icon gold"><i class='bx bx-receipt' aria-hidden="true"></i></span>
+                <span class="project-kicker">INB IT Firm &middot; 2024</span>
+              </span>
+              <span class="project-name">School Fees System</span>
+              <span class="project-sum">Fee billing, payment recording and arrears tracking for schools of any size.</span>
+              <span class="tags"><span>Billing</span><span>Part-payments</span><span>Arrears</span><span>Receipts</span></span>
+              <span class="project-more">View details <i class='bx bx-right-arrow-alt' aria-hidden="true"></i></span>
+            </button>
+            <div class="project-details">
+              <p class="pd-role"><strong>Client:</strong> Schools across Ghana. I built it after watching bursars reconcile fee books by hand.</p>
+              <h4>What it does</h4>
+              <ul>
+                <li>Bills students by class and term</li>
+                <li>Records part-payments</li>
+                <li>Shows arrears at a glance for one class or the whole school</li>
+                <li>Prints receipts and the termly collection summary heads of school need</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="personal" data-link="https://inbitfirm.org/projects?p=online-voting-system" data-link-label="View on inbitfirm.org">
+            <button type="button" class="project-open" aria-haspopup="dialog">
+              <span class="project-top">
+                <span class="project-icon gold"><i class='bx bx-poll' aria-hidden="true"></i></span>
+                <span class="project-kicker">INB IT Firm &middot; 2024</span>
+              </span>
+              <span class="project-name">Online Voting System</span>
+              <span class="project-sum">Secure electronic voting with verified voters, a sealed ballot and live result tallying.</span>
+              <span class="tags"><span>Verified voters</span><span>Encrypted ballots</span><span>Audit log</span></span>
+              <span class="project-more">View details <i class='bx bx-right-arrow-alt' aria-hidden="true"></i></span>
+            </button>
+            <div class="project-details">
+              <p class="pd-role"><strong>Client:</strong> Tertiary institutions. Used to run student elections where the count has to be fast and defensible.</p>
+              <h4>What it does</h4>
+              <ul>
+                <li>Enforces one voter, one vote against a verified voter roll</li>
+                <li>Stores ballots encrypted</li>
+                <li>Keeps an auditable event log</li>
+                <li>Shows live results to the electoral committee</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="personal" data-link="https://inbitfirm.org/projects?p=password-vault" data-link-label="View on inbitfirm.org">
+            <button type="button" class="project-open" aria-haspopup="dialog">
+              <span class="project-top">
+                <span class="project-icon gold"><i class='bx bx-key' aria-hidden="true"></i></span>
+                <span class="project-kicker">INB IT Firm &middot; Web security</span>
+              </span>
+              <span class="project-name">Password Vault</span>
+              <span class="project-sum">An encrypted store that lets a team share credentials without sending them over WhatsApp.</span>
+              <span class="tags"><span>Encryption</span><span>Access control</span><span>Audit trail</span></span>
+              <span class="project-more">View details <i class='bx bx-right-arrow-alt' aria-hidden="true"></i></span>
+            </button>
+            <div class="project-details">
+              <p class="pd-role"><strong>Internal product.</strong> I built it after seeing shared logins stay in client chat groups long after the people who needed them had left.</p>
+              <h4>What it does</h4>
+              <ul>
+                <li>Encrypts credentials at rest</li>
+                <li>Gives each user their own access</li>
+                <li>Keeps an audit trail of who opened what, and when</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="personal" data-link="https://inbitfirm.org/projects?p=school-website" data-link-label="View on inbitfirm.org">
+            <button type="button" class="project-open" aria-haspopup="dialog">
+              <span class="project-top">
+                <span class="project-icon gold"><i class='bx bx-building' aria-hidden="true"></i></span>
+                <span class="project-kicker">INB IT Firm &middot; Web development</span>
+              </span>
+              <span class="project-name">School Website Platform</span>
+              <span class="project-sum">A public school website with news, admissions information and a content area staff can edit themselves.</span>
+              <span class="tags"><span>CMS</span><span>Admissions</span><span>News</span><span>Gallery</span></span>
+              <span class="project-more">View details <i class='bx bx-right-arrow-alt' aria-hidden="true"></i></span>
+            </button>
+            <div class="project-details">
+              <p class="pd-role"><strong>Client:</strong> Basic and secondary schools. Staff post news and update term dates without calling a developer.</p>
+              <h4>What it includes</h4>
+              <ul>
+                <li>Programme and admissions pages</li>
+                <li>Term calendar, news and announcements</li>
+                <li>Photo gallery</li>
+                <li>A contact form that routes enquiries to the school office</li>
+                <li>A simple admin area for school staff</li>
               </ul>
             </div>
           </article>
@@ -747,21 +995,48 @@
             <button type="button" class="project-open" aria-haspopup="dialog">
               <span class="project-top">
                 <span class="project-icon gold"><i class='bx bx-store' aria-hidden="true"></i></span>
-                <span class="project-kicker">INB IT Firm &middot; Personal builds</span>
+                <span class="project-kicker">INB IT Firm &middot; Client builds</span>
               </span>
               <span class="project-name">Business &amp; Community Web Systems</span>
-              <span class="project-sum">Custom platforms and websites I built on my own time, including marketplace, delivery, savings (susu) and church management modules.</span>
-              <span class="tags"><span>Marketplace</span><span>Delivery</span><span>Susu savings</span><span>Church mgmt</span></span>
+              <span class="project-sum">Marketplace, import store, church management, delivery and savings (susu) platforms for businesses and communities.</span>
+              <span class="tags"><span>Marketplace</span><span>Church mgmt</span><span>Delivery</span><span>Susu savings</span></span>
               <span class="project-more">View details <i class='bx bx-right-arrow-alt' aria-hidden="true"></i></span>
             </button>
             <div class="project-details">
-              <p class="pd-role"><strong>My role:</strong> Designed and developed each platform independently.</p>
-              <h4>Modules</h4>
+              <p class="pd-role"><strong>My role:</strong> Designed and developed each platform.</p>
+              <h4>Live examples</h4>
               <ul>
-                <li>Online marketplace</li>
+                <li><a href="https://capecoastmall.inbitfirm.org/" target="_blank" rel="noopener">Cape Coast Mall</a>: a multi-store marketplace with order tracking</li>
+                <li><a href="https://afridaimport.inbitfirm.org/" target="_blank" rel="noopener">AD Afida Import</a>: an import and wholesale storefront</li>
+                <li><a href="https://ba.inbitfirm.org/" target="_blank" rel="noopener">Blessed Assurance AG</a>: church administration, giving and communication</li>
+              </ul>
+              <h4>Also built</h4>
+              <ul>
                 <li>Delivery management</li>
                 <li>Savings (susu) management</li>
-                <li>Church management</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="personal" data-link="https://inbitfirm.org/projects?p=digital-marketing-campaign" data-link-label="View on inbitfirm.org">
+            <button type="button" class="project-open" aria-haspopup="dialog">
+              <span class="project-top">
+                <span class="project-icon gold"><i class='bx bx-bar-chart-square' aria-hidden="true"></i></span>
+                <span class="project-kicker">INB IT Firm &middot; B Systems Limited</span>
+              </span>
+              <span class="project-name">Digital Marketing Campaign</span>
+              <span class="project-sum">Campaign strategy, creative production and performance analysis for a services business.</span>
+              <span class="tags"><span>Strategy</span><span>Creative</span><span>Paid &amp; organic</span><span>Reporting</span></span>
+              <span class="project-more">View details <i class='bx bx-right-arrow-alt' aria-hidden="true"></i></span>
+            </button>
+            <div class="project-details">
+              <p class="pd-role"><strong>Client:</strong> B Systems Limited (2024).</p>
+              <h4>What we delivered</h4>
+              <ul>
+                <li>Audience research</li>
+                <li>Creative production</li>
+                <li>Paid and organic distribution</li>
+                <li>A reporting dashboard tracking cost per enquiry rather than impressions</li>
               </ul>
             </div>
           </article>
@@ -783,65 +1058,11 @@
               <ul>
                 <li>Networking: cabling, router and switch configuration</li>
                 <li>CCTV and IP device configuration</li>
-                <li>Web hosting (cPanel), Linux and Windows servers</li>
+                <li>Web hosting (cPanel), Linux and Windows servers, including the inbitfirm.org family of sites</li>
                 <li>Domain, DNS and email administration</li>
               </ul>
             </div>
           </article>
-        </div>
-
-        <!-- Gallery -->
-        <div class="gallery-head reveal">
-          <h3>Selected work</h3>
-          <div class="filter-bar compact" role="group" aria-label="Filter gallery">
-            <button type="button" class="chip-btn is-active" data-gallery-filter="all">All</button>
-            <button type="button" class="chip-btn" data-gallery-filter="web">Websites &amp; portals</button>
-            <button type="button" class="chip-btn" data-gallery-filter="design">Graphic design</button>
-          </div>
-        </div>
-        <div class="gallery">
-          <figure class="shot reveal" data-cat="web">
-            <a class="shot-open" href="assets/img/work/charlse-angels-academy.jpg">
-              <img src="assets/img/work/charlse-angels-academy.jpg" alt="Charlse-Angels Academy school website homepage" width="1200" height="565" loading="lazy">
-            </a>
-            <figcaption><strong>Charlse-Angels Academy</strong><span>School website</span></figcaption>
-          </figure>
-          <figure class="shot reveal" data-cat="web">
-            <a class="shot-open" href="assets/img/work/gabraham-foundation.jpg">
-              <img src="assets/img/work/gabraham-foundation.jpg" alt="Gabraham Child Raise Foundation NGO website with sponsor and donate actions" width="1200" height="611" loading="lazy">
-            </a>
-            <figcaption><strong>Gabraham Child Raise Foundation</strong><span>NGO website with sponsorship &amp; donations</span></figcaption>
-          </figure>
-          <figure class="shot reveal" data-cat="web">
-            <a class="shot-open" href="assets/img/work/ttu-online-newsportal.jpg">
-              <img src="assets/img/work/ttu-online-newsportal.jpg" alt="TTU Online Newsportal with news, category list and search" width="1200" height="605" loading="lazy">
-            </a>
-            <figcaption><strong>TTU Online Newsportal</strong><span>University news portal: categories, search &amp; forums</span></figcaption>
-          </figure>
-          <figure class="shot reveal" data-cat="web">
-            <a class="shot-open" href="assets/img/work/ttu-student-portal.jpg">
-              <img src="assets/img/work/ttu-student-portal.jpg" alt="Student portal sign-in page" width="1200" height="675" loading="lazy">
-            </a>
-            <figcaption><strong>Student portal</strong><span>Sign-in experience</span></figcaption>
-          </figure>
-          <figure class="shot shot-wide reveal" data-cat="design">
-            <a class="shot-open" href="assets/img/work/online-tutoring-advert.jpg">
-              <img src="assets/img/work/online-tutoring-advert.jpg" alt="Online tutoring advert for web development, programming and networking classes" width="1200" height="675" loading="lazy">
-            </a>
-            <figcaption><strong>Online tutoring campaign</strong><span>Advert for INB IT Firm</span></figcaption>
-          </figure>
-          <figure class="shot shot-tall reveal" data-cat="design">
-            <a class="shot-open" href="assets/img/work/alphabet-poster-fruits.jpg">
-              <img src="assets/img/work/alphabet-poster-fruits.jpg" alt="Alphabet poster illustrated with fruits and vegetables" width="636" height="900" loading="lazy">
-            </a>
-            <figcaption><strong>Alphabet poster: fruits</strong><span>Educational print design</span></figcaption>
-          </figure>
-          <figure class="shot shot-tall reveal" data-cat="design">
-            <a class="shot-open" href="assets/img/work/alphabet-poster-animals.jpg">
-              <img src="assets/img/work/alphabet-poster-animals.jpg" alt="Alphabet poster illustrated with animals" width="636" height="900" loading="lazy">
-            </a>
-            <figcaption><strong>Alphabet poster: animals</strong><span>Educational print design</span></figcaption>
-          </figure>
         </div>
       </div>
     </section>
@@ -920,12 +1141,12 @@
             </ul>
 
             <div class="btn-row reveal">
-              <a class="btn btn-primary" href="Isaac_Banson_Botwe_CV.pdf" download><i class='bx bx-download' aria-hidden="true"></i> Download CV</a>
+              <a class="btn btn-primary" href="cv.html" data-cv-open aria-haspopup="dialog"><i class='bx bx-file' aria-hidden="true"></i> View my CV</a>
               <a class="btn btn-soft" href="assets/isaac-banson-botwe.vcf" download="Isaac-Banson-Botwe.vcf"><i class='bx bx-user-plus' aria-hidden="true"></i> Save contact</a>
             </div>
           </div>
 
-          <form class="contact-form reveal" id="contact-form" novalidate>
+          <form class="contact-form reveal" id="contact-form" novalidate data-endpoint="https://contact.inbitfirm.org/api/contact">
             <h3>Send a message</h3>
             <div class="field-row">
               <div class="field">
@@ -960,8 +1181,13 @@
               <textarea id="cf-message" name="message" aria-describedby="cf-message-error" rows="5" required placeholder="Tell me about the role or project…"></textarea>
               <span class="field-error" id="cf-message-error">Please add a short message.</span>
             </div>
-            <button type="submit" class="btn btn-primary btn-block"><i class='bx bx-send' aria-hidden="true"></i> Send message</button>
-            <p class="form-note"><i class='bx bx-info-circle' aria-hidden="true"></i> Opens your email app with the message filled in.</p>
+            <div class="hp-field" aria-hidden="true">
+              <label for="cf-website">Leave this field empty</label>
+              <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block"><i class='bx bx-send' aria-hidden="true"></i> <span>Send message</span></button>
+            <div class="form-status" role="status" aria-live="polite" hidden></div>
+            <p class="form-note"><i class='bx bx-lock-alt' aria-hidden="true"></i> Your message comes straight to me, and I reply within a day.</p>
           </form>
         </div>
       </div>
@@ -1000,6 +1226,7 @@
       <div class="modal-body"></div>
       <div class="modal-actions">
         <a class="btn btn-primary" href="#contact" data-close>Ask me about this project</a>
+        <a class="btn btn-soft modal-link" href="#" target="_blank" rel="noopener" hidden>Visit</a>
       </div>
     </div>
   </dialog>
@@ -1013,6 +1240,26 @@
       <figcaption></figcaption>
     </figure>
     <button type="button" class="icon-btn lb-nav lb-next" aria-label="Next image"><i class='bx bx-chevron-right'></i></button>
+  </dialog>
+
+  <!-- CV viewer (view only) -->
+  <dialog class="cv-viewer" id="cv-viewer" aria-labelledby="cv-title">
+    <div class="cv-bar">
+      <div class="cv-title">
+        <i class='bx bx-file' aria-hidden="true"></i>
+        <div><strong id="cv-title">Curriculum Vitae</strong><small>Isaac Banson Botwe &middot; 2 pages</small></div>
+      </div>
+      <div class="cv-tools">
+        <button type="button" class="icon-btn" data-cv-zoom="-1" aria-label="Zoom out"><i class='bx bx-zoom-out'></i></button>
+        <span class="cv-zoom" aria-live="polite">100%</span>
+        <button type="button" class="icon-btn" data-cv-zoom="1" aria-label="Zoom in"><i class='bx bx-zoom-in'></i></button>
+        <button type="button" class="icon-btn cv-close" aria-label="Close CV"><i class='bx bx-x'></i></button>
+      </div>
+    </div>
+    <div class="cv-pages">
+      <img data-src="assets/img/cv/cv-page-1.webp" alt="CV of Isaac Banson Botwe, page 1 of 2" width="1429" height="2021" draggable="false">
+      <img data-src="assets/img/cv/cv-page-2.webp" alt="CV of Isaac Banson Botwe, page 2 of 2" width="1429" height="2021" draggable="false">
+    </div>
   </dialog>
 
   <div class="toast" role="status" aria-live="polite"></div>

@@ -1,0 +1,24 @@
+{
+  "name": "contact-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Contact form service for nana-botwe.github.io: saves each message to a text file and emails a digest every evening.",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "digest": "node dist/digest.js",
+    "dev": "tsc --watch"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/nodemailer": "^6.4.17",
+    "typescript": "^5.7.2"
+  }
+}
