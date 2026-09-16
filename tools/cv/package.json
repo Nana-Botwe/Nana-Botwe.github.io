@@ -1,0 +1,21 @@
+{
+  "name": "cv-builder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Builds the CV PDF and the website's view-only CV page images from cv.html.",
+  "type": "module",
+  "scripts": {
+    "build": "tsx build-cv.ts"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "dependencies": {
+    "playwright": "^1.49.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

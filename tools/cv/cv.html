@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Isaac Banson Botwe - CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+
+    :root {
+      --navy: #1b3452;
+      --navy-2: #24446a;
+      --ink: #2a2f36;
+      --muted: #5d6673;
+      --line: #c9d3de;
+      --side-ink: #e9eff6;
+      --side-muted: #b8c6d6;
+      --link: #1d5c96;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #d9dee5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: "Lato", "Segoe UI", Arial, sans-serif;
+      font-size: 8.7pt;
+      line-height: 1.38;
+      color: var(--ink);
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: 67mm 1fr;
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      overflow: hidden;
+      background: #fff;
+      break-after: page;
+    }
+    .page:last-child { break-after: auto; }
+    @media screen { .page { margin: 8mm auto; box-shadow: 0 4px 24px rgba(0, 0, 0, .18); } }
+
+    /* ---------- Sidebar ---------- */
+    .side {
+      position: relative;
+      padding: 11mm 6.5mm 9mm 8mm;
+      overflow: hidden;
+      background: var(--navy);
+      color: var(--side-ink);
+    }
+    .photo {
+      display: block;
+      width: 40mm;
+      height: 40mm;
+      margin: 0 auto 7mm;
+      border: 1.2mm solid #fff;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 18%;
+    }
+    .side h2 {
+      margin: 0 0 2.6mm;
+      padding-bottom: 1.4mm;
+      border-bottom: .5mm solid rgba(255, 255, 255, .85);
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    .side section + section { margin-top: 6mm; }
+    .side p { margin: 0; }
+    .side a { color: var(--side-ink); text-decoration: none; }
+
+    .contact { list-style: none; margin: 0; padding: 0; }
+    .contact li {
+      display: grid;
+      grid-template-columns: 4.6mm 1fr;
+      align-items: start;
+      gap: 1.8mm;
+      margin-bottom: 1.6mm;
+      overflow-wrap: anywhere;
+    }
+    .contact svg { width: 3.4mm; height: 3.4mm; margin-top: .5mm; fill: #fff; }
+
+    .edu { margin-bottom: 3mm; }
+    .edu .years { color: #fff; font-weight: 700; }
+    .edu .school { color: #fff; font-weight: 700; text-transform: uppercase; font-size: 8pt; }
+    .edu .award { color: var(--side-ink); }
+
+    .skills { list-style: none; margin: 0; padding: 0; }
+    .skills li { margin-bottom: 1.8mm; }
+    .skills b { color: #fff; }
+
+    .dots { list-style: none; margin: 0; padding: 0; }
+    .dots li { position: relative; padding-left: 3.4mm; margin-bottom: 1.1mm; }
+    .dots li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.7mm;
+      width: 1.3mm;
+      height: 1.3mm;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .glance { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4mm; }
+    .glance div { padding: 2.2mm 2.4mm; border: .3mm solid rgba(255, 255, 255, .28); border-radius: 1.6mm; }
+    .glance strong { display: block; color: #fff; font-family: "Montserrat", sans-serif; font-size: 13pt; line-height: 1.1; }
+    .glance span { color: var(--side-muted); font-size: 7.4pt; line-height: 1.25; display: block; margin-top: .6mm; }
+
+    .links li { margin-bottom: 1.8mm; }
+    .links small { display: block; color: var(--side-muted); font-size: 7.2pt; }
+
+    /* ---------- Main column ---------- */
+    .main {
+      position: relative;
+      padding: 10mm 10mm 7mm 9mm;
+      overflow: hidden;
+    }
+    .name {
+      margin: 0;
+      color: #3e434a;
+      font-family: "Montserrat", sans-serif;
+      font-size: 24.5pt;
+      font-weight: 700;
+      letter-spacing: .045em;
+      line-height: 1.1;
+      text-align: center;
+    }
+    .main .title {
+      margin: 2mm 0 0;
+      color: #555c66;
+      font-family: "Montserrat", sans-serif;
+      font-size: 11.5pt;
+      font-weight: 500;
+      letter-spacing: .24em;
+      text-align: center;
+    }
+    .rule { width: 22mm; height: .9mm; margin: 2.4mm auto 4mm; background: var(--navy); }
+
+    .running {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5mm;
+      padding-bottom: 1.6mm;
+      border-bottom: .3mm solid var(--line);
+      color: var(--muted);
+      font-size: 7.6pt;
+      letter-spacing: .04em;
+    }
+    .running b { color: var(--navy); font-family: "Montserrat", sans-serif; letter-spacing: .08em; }
+
+    .main h2 {
+      margin: 0 0 2.4mm;
+      padding-bottom: 1.2mm;
+      border-bottom: .55mm solid var(--navy);
+      color: var(--navy);
+      font-family: "Montserrat", sans-serif;
+      font-size: 12pt;
+      font-weight: 700;
+      letter-spacing: .17em;
+    }
+    .main section + section { margin-top: 4.2mm; }
+    .main p { margin: 0; text-align: justify; }
+    .main a { color: var(--link); text-decoration: none; }
+
+    ul.bullets { margin: 1mm 0 0; padding: 0; list-style: none; }
+    ul.bullets li { position: relative; padding-left: 3.3mm; margin-bottom: .9mm; text-align: justify; }
+    ul.bullets li::before {
+      content: "";
+      position: absolute;
+      left: .4mm;
+      top: 1.75mm;
+      width: 1.1mm;
+      height: 1.1mm;
+      border-radius: 50%;
+      background: #6a7482;
+    }
+
+    .timeline { position: relative; padding-left: 4.2mm; border-left: .35mm solid var(--navy); }
+    .job { position: relative; }
+    .job + .job { margin-top: 3.2mm; }
+    .job::before {
+      content: "";
+      position: absolute;
+      left: -5.55mm;
+      top: .9mm;
+      width: 2.5mm;
+      height: 2.5mm;
+      border-radius: 50%;
+      background: var(--navy);
+    }
+    .job-org { font-size: 9.2pt; }
+    .job-org b { color: #20252b; font-family: "Montserrat", sans-serif; font-weight: 600; text-transform: uppercase; }
+    .job-org span { color: var(--muted); }
+    .job-role { display: flex; justify-content: space-between; gap: 3mm; font-weight: 700; color: #20252b; }
+    .job-role span { font-weight: 400; color: #20252b; white-space: nowrap; }
+    .job-note { color: var(--muted); font-style: italic; }
+
+    .project { break-inside: avoid; }
+    .project + .project { margin-top: 2.4mm; }
+    .project-head { display: flex; justify-content: space-between; gap: 3mm; }
+    .project-head b { color: #20252b; font-size: 9.1pt; }
+    .project-head a, .project-head span { white-space: nowrap; font-size: 8pt; }
+    .project-head span { color: var(--muted); }
+    .project p { margin-top: .4mm; }
+
+    .ref-box {
+      padding: 3mm 3.5mm;
+      border-left: 1mm solid var(--navy);
+      border-radius: 1mm;
+      background: #f1f4f8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =================== PAGE 1 =================== -->
+  <div class="page">
+    <aside class="side">
+      <img class="photo" src="../../assets/img/profile/isaac-portrait.jpg" alt="Isaac Banson Botwe">
+
+      <section>
+        <h2>CONTACT</h2>
+        <ul class="contact">
+          <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span>+233 550 100 160</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><span>isaacnanabotwe@gmail.com</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>Accra, Ghana</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.9a15.6 15.6 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.5 1.1-2.8 1.9-4zM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3zm.8 2h3a15.6 15.6 0 0 0 1.3 3.6A8 8 0 0 1 5.1 16zm3-8h-3a8 8 0 0 1 4.3-3.6C8.8 5.5 8.4 6.7 8.1 8zM12 20c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.5-1.1 2.8-1.9 4zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h2.9a8 8 0 0 1-4.3 3.6zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4z"/></svg><span>nana-botwe.github.io</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.3 18.3V9.8H5.7v8.5h2.6zM7 8.6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11.3 9.7v-4.7c0-2.3-.5-4-3.2-4-1.3 0-2.1.7-2.5 1.4V9.8h-2.5v8.5h2.6v-4.2c0-1.1.2-2.2 1.6-2.2 1.3 0 1.4 1.3 1.4 2.3v4.1h2.6z"/></svg><span>linkedin.com/in/<br>isaac-nana-botwe-443491205</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg><span>github.com/nana-botwe</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>EDUCATION</h2>
+        <div class="edu">
+          <div class="years">2022 – 2023</div>
+          <div class="school">Takoradi Technical University</div>
+          <div class="award">Bachelor of Technology in Information Technology (Software Engineering)</div>
+        </div>
+        <div class="edu">
+          <div class="years">2019 – 2022</div>
+          <div class="school">Takoradi Technical University</div>
+          <div class="award">Higher National Diploma (HND) in Information Technology</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>SKILLS</h2>
+        <ul class="skills">
+          <li><b>Languages:</b> PHP, JavaScript, TypeScript, Java, Python, C#, Kotlin, Dart, SQL, Bash, HTML5, CSS3</li>
+          <li><b>Frameworks:</b> Laravel, CodeIgniter, Bootstrap 5, jQuery, AJAX, DataTables, Composer</li>
+          <li><b>Databases:</b> MySQL, MariaDB, PostgreSQL, MS SQL Server, MongoDB, SQLite; database design, administration, backup and recovery</li>
+          <li><b>Systems:</b> LMS (Moodle, Canvas), ERP integration (PeopleSoft, Banner), student portals, REST APIs, WordPress / CMS, payment gateways</li>
+          <li><b>Infrastructure:</b> Linux &amp; Windows servers, cPanel hosting, domains &amp; DNS, LAN/WAN, CCTV &amp; IP devices</li>
+          <li><b>Tools:</b> Git, code review, Agile, Asana, Trello, OOP, SEO</li>
+          <li><b>Design &amp; other:</b> UI/UX design, Photoshop, Adobe XD, graphic design, AI integration, digital marketing, analytics &amp; reporting</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="main">
+      <h1 class="name">ISAAC BANSON BOTWE</h1>
+      <p class="title">SOFTWARE ENGINEER</p>
+      <div class="rule"></div>
+
+      <section>
+        <h2>PROFILE</h2>
+        <p>Software Engineer with over six years of experience designing, building and supporting enterprise web systems for higher-education institutions. Strong background in PHP and MySQL application development, learning management systems, database design and administration, and third-party system integration. Currently responsible for the delivery and support of core academic and administrative platforms at KAAF University, having previously led the LeMAS and Systems Support team at Accra Institute of Technology. Through INB IT Firm, builds and runs live products including a cloud school management system, a church administration platform and online stores. Comfortable owning a system end to end: requirements gathering, architecture, development, deployment, user training and ongoing support.</p>
+      </section>
+
+      <section>
+        <h2>KEY HIGHLIGHTS</h2>
+        <ul class="bullets">
+          <li>Promoted to Team Leader for LeMAS and Systems Support at Accra Institute of Technology in March 2025 for technical performance and leadership, with an additional responsibility allowance.</li>
+          <li>Built and runs seven live web systems and sites on inbitfirm.org, from school management and church administration to e-commerce.</li>
+          <li>More than nine years in IT across software engineering, systems support and teaching.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>WORK EXPERIENCE</h2>
+        <div class="timeline">
+          <div class="job">
+            <div class="job-org"><b>KAAF University</b> <span>| Gomoa Fetteh Kakraba, Ghana</span></div>
+            <div class="job-role">Software Engineer <span>July 2025 – Present</span></div>
+            <ul class="bullets">
+              <li>Design, develop and maintain university applications including student portals, learning management systems and research tools.</li>
+              <li>Integrate third-party platforms (LMS solutions such as Moodle and Canvas, and ERP systems such as PeopleSoft and Banner) with internal university systems.</li>
+              <li>Design and manage databases, ensuring data integrity, efficient access, and reliable backup and recovery procedures.</li>
+              <li>Provide technical support and debugging for faculty, students and administrators, translating technical issues into clear language for non-technical users.</li>
+              <li>Support institutional data analytics and reporting to inform management decision-making.</li>
+              <li>Collaborate with IT teams, system administrators and stakeholders on infrastructure and policy, and maintain compatibility across university platforms.</li>
+              <li>Work with faculty members and researchers to build custom research software and embed technology into teaching and research.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-org"><b>Accra Institute of Technology (AIT)</b> <span>| Accra, Ghana</span></div>
+            <div class="job-role">Senior Software Developer <span>April 2023 – June 2025</span></div>
+            <div class="job-note">Team Leader, LeMAS &amp; Systems Support (March 2025 – June 2025)</div>
+            <ul class="bullets">
+              <li>Led the development, implementation and ongoing support of the institution's Learning Management System serving students, lecturers and administrators.</li>
+              <li>Led, mentored and managed the software team; conducted code reviews and coached junior developers, raising overall delivery quality.</li>
+              <li>Designed and optimised databases for improved performance and scalability in line with institutional objectives.</li>
+              <li>Installed, customised, updated and maintained AIT internal and external websites and web systems.</li>
+              <li>Developed reusable software tools and subsystems to support code reuse and speed up new development.</li>
+              <li>Produced creative visuals, managed the planning and rollout of web-based applications, and increased AIT's online visibility through search engine optimisation.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- =================== PAGE 2 =================== -->
+  <div class="page">
+    <aside class="side">
+      <section>
+        <h2>AT A GLANCE</h2>
+        <div class="glance">
+          <div><strong>6+</strong><span>years building enterprise web systems</span></div>
+          <div><strong>9+</strong><span>years in IT, since 2017</span></div>
+          <div><strong>7</strong><span>live systems and sites on inbitfirm.org</span></div>
+          <div><strong>5</strong><span>universities and schools worked for</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>CORE STRENGTHS</h2>
+        <ul class="dots">
+          <li>Project Management</li>
+          <li>Team Leadership &amp; Mentoring</li>
+          <li>Problem Solving</li>
+          <li>Teamwork</li>
+          <li>User Training &amp; Support</li>
+          <li>End-to-end System Ownership</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>LANGUAGES</h2>
+        <ul class="dots">
+          <li>English (Fluent)</li>
+          <li>Fante (Native)</li>
+          <li>Twi (Fluent)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>ONLINE</h2>
+        <ul class="dots links">
+          <li>Portfolio<small>nana-botwe.github.io</small></li>
+          <li>INB IT Firm<small>inbitfirm.org</small></li>
+          <li>LinkedIn<small>linkedin.com/in/isaac-nana-botwe-443491205</small></li>
+          <li>GitHub<small>github.com/nana-botwe</small></li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="main">
+      <div class="running"><b>ISAAC BANSON BOTWE</b><span>Software Engineer · Page 2 of 3</span></div>
+
+      <section>
+        <h2>WORK EXPERIENCE <span style="font-weight:500;letter-spacing:.06em;font-size:9pt">(CONTINUED)</span></h2>
+        <div class="timeline">
+          <div class="job">
+            <div class="job-org"><b>Mary's Child Educational Complex</b> <span>| Ghana</span></div>
+            <div class="job-role">IT Teacher (Class 4 – JHS 3) <span>Aug 2022 – April 2023</span></div>
+            <ul class="bullets">
+              <li>Taught Information and Communication Technology to pupils from Class 4 through Junior High School 3, covering computer fundamentals, word processing, spreadsheets, presentations, internet use and online safety.</li>
+              <li>Prepared schemes of work, lesson notes and practical exercises aligned to the national ICT curriculum, and set and marked termly examinations.</li>
+              <li>Ran practical computer laboratory sessions, supervising pupils on hands-on tasks and managing lab discipline and equipment usage.</li>
+              <li>Maintained the school's computers, printers, projectors and network, handling installation, troubleshooting, virus removal and routine servicing.</li>
+              <li>Prepared JHS 3 candidates for their BECE ICT paper and supported staff with day-to-day computer and record-keeping needs.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-org"><b>Takoradi Technical University</b> <span>| Takoradi, Ghana</span></div>
+            <div class="job-role">Teaching Assistant &amp; Systems Support <span>2021 – 2022</span></div>
+            <ul class="bullets">
+              <li>Assisted in the design, development and implementation of database structures and schemas, and monitored backup and recovery procedures.</li>
+              <li>Ensured the integrity, security and accessibility of departmental database systems, and troubleshot performance issues.</li>
+              <li>Organised and supervised laboratory sessions, experiments and practical exercises.</li>
+              <li>Collaborated with senior lecturers to prepare course materials and to embed database concepts into practical coursework.</li>
+              <li>Conducted tutorials and discussion sessions supplementing main lectures, and facilitated class participation.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-org"><b>Fekwon College</b> <span>| Takoradi, Ghana</span></div>
+            <div class="job-role">IT Instructor &amp; Support Technician <span>2017 – 2021</span></div>
+            <ul class="bullets">
+              <li>Delivered practical IT instruction in computer fundamentals, office applications, web design basics and hardware maintenance.</li>
+              <li>Installed, configured and maintained laboratory computers, software, printers and network equipment, keeping downtime to a minimum.</li>
+              <li>Set up and administered the college network, including cabling, router and switch configuration, internet access and user accounts.</li>
+              <li>Performed hardware diagnostics, repairs, upgrades and data recovery for college equipment and staff machines.</li>
+              <li>Modified and extended existing software systems to improve performance and add features requested by staff.</li>
+              <li>Conducted needs assessments for departments, prepared cost estimates and advised management on equipment purchases and system upgrades.</li>
+              <li>Managed multiple concurrent projects under deadline pressure, and provided user training and ongoing technical support to staff and students.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>INSTITUTIONAL PROJECTS</h2>
+        <div class="project">
+          <div class="project-head"><b>Learning Management System</b><span>Accra Institute of Technology</span></div>
+          <p>PHP/MySQL platform supporting course delivery, assignments, quizzes, examinations and results for students and lecturers. Led development, implementation and ongoing support.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>University Platforms &amp; Integrations</b><span>KAAF University</span></div>
+          <p>Student portals, learning management systems and research tools, with integrations connecting Moodle, Canvas, PeopleSoft and Banner to internal university systems.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>University Web Presence &amp; Student Portals</b><span>AIT</span></div>
+          <p>Design, deployment and maintenance of institutional websites and student-facing portals, including SEO and performance optimisation.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- =================== PAGE 3 =================== -->
+  <div class="page">
+    <aside class="side">
+      <section>
+        <h2>LIVE SYSTEMS</h2>
+        <ul class="dots links">
+          <li>INB School System<small>inbschool.inbitfirm.org</small></li>
+          <li>Blessed Assurance AG<small>ba.inbitfirm.org</small></li>
+          <li>File System Management<small>filesystem.inbitfirm.org</small></li>
+          <li>KAAF Task System<small>task.inbitfirm.org</small></li>
+          <li>Cape Coast Mall<small>capecoastmall.inbitfirm.org</small></li>
+          <li>AD Afida Import<small>afridaimport.inbitfirm.org</small></li>
+          <li>INB IT Firm<small>inbitfirm.org</small></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>WHAT I BRING</h2>
+        <ul class="dots">
+          <li>End-to-end ownership, from requirements to support</li>
+          <li>Proven leadership and mentoring of developers</li>
+          <li>Higher-education systems expertise</li>
+          <li>Clear communication with non-technical users</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="main">
+      <div class="running"><b>ISAAC BANSON BOTWE</b><span>Software Engineer · Page 3 of 3</span></div>
+
+      <section>
+        <h2>LIVE PROJECTS · INB IT FIRM</h2>
+        <div class="project">
+          <div class="project-head"><b>INB School System</b><a href="https://inbschool.inbitfirm.org/">inbschool.inbitfirm.org</a></div>
+          <p>Cloud school management for basic, senior high and tertiary schools: admissions, student and staff records, QR-code attendance, continuous assessment with automatic terminal reports, fees with QR payments, HR &amp; payroll, virtual learning and role-based access. Installable as a web app, with a custom domain for each school.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>Blessed Assurance AG Church System</b><a href="https://ba.inbitfirm.org/">ba.inbitfirm.org</a></div>
+          <p>Church administration covering membership, attendance, finance, online giving, sermons, SMS announcements and church chat, with reports across every module and fingerprint or PIN sign-in.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>File System Management</b><a href="https://filesystem.inbitfirm.org/">filesystem.inbitfirm.org</a></div>
+          <p>Document management that lets an institution organise, version and share its files, with role-based access, automatic versioning, storage and activity insights, and a full audit trail.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>KAAF Task System</b><a href="https://task.inbitfirm.org/">task.inbitfirm.org</a></div>
+          <p>Task tracking for the KAAF University ICT Office: recurring daily and weekly tasks generated each morning, a 07:00 email reminder, and an automatic weekly report on the manager's dashboard every Saturday.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>Cape Coast Mall</b><a href="https://capecoastmall.inbitfirm.org/">capecoastmall.inbitfirm.org</a></div>
+          <p>Multi-store online marketplace where shoppers browse by category or store, see new arrivals and top sellers, check out and track delivery orders across Cape Coast.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>AD Afida Import</b><a href="https://afridaimport.inbitfirm.org/">afridaimport.inbitfirm.org</a></div>
+          <p>Import and wholesale storefront for goods from China, the USA and Turkey, with real product photos and videos, online ordering and delivery tracking anywhere in Ghana.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>INB IT Firm Website</b><a href="https://inbitfirm.org/">inbitfirm.org</a></div>
+          <p>Company website with services, a projects portfolio, blog, quote requests, live chat and built-in translation, served behind strict security headers.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>OTHER PROJECTS</h2>
+        <div class="project">
+          <div class="project-head"><b>School Fees System</b><span>Schools across Ghana · 2024</span></div>
+          <p>Bills students by class and term, records part-payments, shows arrears for a class or the whole school, and prints receipts and termly collection summaries.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>Online Voting System</b><span>Tertiary institutions · 2024</span></div>
+          <p>Secure student elections with one-voter-one-vote against a verified roll, encrypted ballot storage, an auditable event log and live tallying for the electoral committee.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>Password Vault</b><span>Internal product · 2024</span></div>
+          <p>Encrypted credential store so teams share logins safely, with per-user access and an audit trail of who opened what and when.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>School Website Platform</b><span>Basic &amp; secondary schools</span></div>
+          <p>Admissions and programme pages, term calendar, news, photo gallery and an enquiry form, with an admin area staff update themselves.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>Digital Marketing Campaign</b><span>B Systems Limited · 2024</span></div>
+          <p>Audience research, creative production, paid and organic distribution, and a dashboard tracking cost per enquiry.</p>
+        </div>
+        <div class="project">
+          <div class="project-head"><b>Business &amp; Community Systems</b><span>Personal builds</span></div>
+          <p>Delivery management and savings (susu) platforms, alongside the marketplace and church systems above.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>REFERENCES</h2>
+        <div class="ref-box">Professional references from KAAF University management are available on request.</div>
+      </section>
+    </main>
+  </div>
+
+</body>
+
+</html>

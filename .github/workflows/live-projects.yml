@@ -1,0 +1,56 @@
+name: Update live projects
+
+# Checks the inbitfirm.org subdomains and refreshes the "Live on the web" gallery.
+on:
+  schedule:
+    - cron: "17 */6 * * *" # every 6 hours
+  workflow_dispatch: # run it by hand from the Actions tab
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: live-projects
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: tools/live-projects
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tools/live-projects/package-lock.json
+
+      - name: Install
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Check hosts and update the gallery
+        run: npm run update
+
+      - name: Commit and publish changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          git add index.html tools/live-projects/state.json assets/img/work/auto 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898599+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update live projects"
+          git push
+          # Pushes made with the workflow token don't always start a Pages build, so ask for one
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" || true

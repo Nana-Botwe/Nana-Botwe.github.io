@@ -720,6 +720,15 @@
       window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     };
 
+    // Thank the visitor and remind them to press Send in the email app that just opened
+    const acknowledgeByEmailApp = data => {
+      showStatus(
+        'success',
+        `Thank you, ${data.name.split(' ')[0]}. I appreciate you reaching out.`,
+        "Your message is ready in your email app. Press Send and I'll get back to you within a day."
+      );
+    };
+
     const post = async (endpoint, data) => {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), 15000);
@@ -750,7 +759,7 @@
 
       if (!endpoint) {
         openEmailApp(data);
-        showStatus('info', 'Opening your email app…', 'Your message is filled in and ready to send.');
+        acknowledgeByEmailApp(data);
         return;
       }
 
@@ -779,7 +788,7 @@
         toast('Message sent');
       } catch (err) {
         openEmailApp(data);
-        showStatus('info', "The message service isn't reachable right now.", "I've opened your email app with your message ready to send instead.");
+        acknowledgeByEmailApp(data);
       } finally {
         setBusy(false);
       }

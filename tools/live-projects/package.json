@@ -1,0 +1,23 @@
+{
+  "name": "live-projects",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Finds live systems on inbitfirm.org subdomains and updates the portfolio's \"Live on the web\" gallery.",
+  "type": "module",
+  "scripts": {
+    "update": "tsx src/update.ts",
+    "check": "tsx src/update.ts --dry-run --no-screenshots",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "dependencies": {
+    "playwright": "^1.49.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "domain": "inbitfirm.org",
+  "checkDelayMs": 4000,
+  "removeAfterFailures": 3,
+  "newBadgeDays": 30,
+  "screenshotRefreshDays": 60,
+  "ignore": ["www", "mail", "webmail", "cpanel", "whm", "webdisk", "cpcalendars", "cpcontacts", "autodiscover", "autoconfig", "ftp"],
+  "projects": {
+    "inbschool.inbitfirm.org": {
+      "order": 1,
+      "title": "INB School System",
+      "kicker": "SaaS · Education",
+      "category": "software",
+      "description": "Cloud school management for basic, senior high and tertiary schools: fees with QR payments, QR attendance, HR & payroll and virtual learning, installable as a web app.",
+      "image": "assets/img/work/inb-school-system.jpg",
+      "alt": "INB School System homepage"
+    },
+    "ba.inbitfirm.org": {
+      "order": 2,
+      "title": "Blessed Assurance AG Church System",
+      "kicker": "Church administration",
+      "category": "software",
+      "description": "Membership, attendance, finance, online giving, sermons, SMS announcements and church chat, with reports across every module and fingerprint or PIN sign-in.",
+      "image": "assets/img/work/blessed-assurance-church-system.jpg",
+      "alt": "Blessed Assurance AG church system sign-in page"
+    },
+    "filesystem.inbitfirm.org": {
+      "order": 3,
+      "title": "File System Management",
+      "kicker": "Document management",
+      "category": "software",
+      "description": "Lets an institution organise, version and share its files, with role-based access, automatic versioning, storage and activity insights, and a full audit trail.",
+      "image": "assets/img/work/file-system-management.jpg",
+      "alt": "File System Management sign-in page"
+    },
+    "task.inbitfirm.org": {
+      "order": 4,
+      "title": "KAAF Task System",
+      "kicker": "KAAF University · ICT Office",
+      "category": "software",
+      "description": "Recurring daily and weekly tasks created automatically each morning, a 07:00 email reminder, and a weekly report on the manager's dashboard every Saturday.",
+      "image": "assets/img/work/kaaf-task-system.jpg",
+      "alt": "KAAF Task System sign-in page"
+    },
+    "capecoastmall.inbitfirm.org": {
+      "order": 5,
+      "title": "Cape Coast Mall",
+      "kicker": "Multi-store marketplace",
+      "category": "ecommerce",
+      "description": "Online mall where shoppers browse by category or store, see new arrivals and top sellers, check out, and track delivery orders across Cape Coast.",
+      "image": "assets/img/work/cape-coast-mall.jpg",
+      "alt": "Cape Coast Mall online shop homepage"
+    },
+    "afridaimport.inbitfirm.org": {
+      "order": 6,
+      "title": "AD Afida Import",
+      "kicker": "Import & wholesale store",
+      "category": "ecommerce",
+      "description": "Storefront for goods imported from China, the USA and Turkey. Customers see real product photos and videos, order online and track deliveries anywhere in Ghana.",
+      "image": "assets/img/work/ad-afida-import.jpg",
+      "alt": "AD Afida Import storefront homepage"
+    },
+    "inbitfirm.org": {
+      "order": 7,
+      "title": "INB IT Firm",
+      "kicker": "Company website",
+      "category": "web",
+      "description": "My IT company's site, with services, a projects portfolio, a blog, quote requests, live chat and built-in translation, running behind strict security headers.",
+      "image": "assets/img/work/inb-it-firm-website.jpg",
+      "alt": "INB IT Firm company website homepage"
+    }
+  },
+  "archive": [
+    {
+      "title": "Charlse-Angels Academy",
+      "kicker": "School website",
+      "category": "web",
+      "description": "School website with an image slider, gallery, branches, teachers and online registration.",
+      "image": "assets/img/work/charlse-angels-academy.jpg",
+      "alt": "Charlse-Angels Academy school website homepage",
+      "width": 1200,
+      "height": 565
+    },
+    {
+      "title": "Gabraham Child Raise Foundation",
+      "kicker": "NGO website",
+      "category": "web",
+      "description": "Charity website with activities, projects and gallery pages, plus sponsor-a-child and donation calls to action.",
+      "image": "assets/img/work/gabraham-foundation.jpg",
+      "alt": "Gabraham Child Raise Foundation NGO website with sponsor and donate actions",
+      "width": 1200,
+      "height": 611
+    },
+    {
+      "title": "TTU Online Newsportal",
+      "kicker": "University news portal",
+      "category": "web",
+      "description": "News portal for Takoradi Technical University, organised by faculty, with search and forums.",
+      "image": "assets/img/work/ttu-online-newsportal.jpg",
+      "alt": "TTU Online Newsportal with news, category list and search",
+      "width": 1200,
+      "height": 605
+    }
+  ]
+}
