@@ -43,7 +43,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           cd "$GITHUB_WORKSPACE"
-          git add index.html tools/live-projects/state.json assets/img/work/auto 2>/dev/null || true
+          # assets/img/work always exists; the auto/ folder only appears once a new system is found
+          git add --all -- index.html tools/live-projects/state.json assets/img/work
           if git diff --cached --quiet; then
             echo "Nothing changed."
             exit 0
