@@ -15,6 +15,16 @@
       "live": true,
       "failures": 0
     },
+    "exams.inbitfirm.org": {
+      "firstSeen": "2026-09-19",
+      "live": true,
+      "failures": 0,
+      "title": "Google",
+      "description": "Search the world",
+      "category": "software",
+      "image": "assets/img/work/auto/exams.jpg",
+      "screenshotAt": "2026-09-19"
+    },
     "filesystem.inbitfirm.org": {
       "firstSeen": "2026-09-16",
       "live": true,
