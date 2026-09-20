@@ -18,12 +18,13 @@
     "exams.inbitfirm.org": {
       "firstSeen": "2026-09-19",
       "live": true,
-      "failures": 0,
+      "failures": 1,
       "title": "Google",
       "description": "Search the world",
       "category": "software",
       "image": "assets/img/work/auto/exams.jpg",
-      "screenshotAt": "2026-09-19"
+      "screenshotAt": "2026-09-19",
+      "lastError": "page has almost no content"
     },
     "filesystem.inbitfirm.org": {
       "firstSeen": "2026-09-16",
