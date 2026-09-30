@@ -18,7 +18,7 @@
     "exams.inbitfirm.org": {
       "firstSeen": "2026-09-19",
       "live": false,
-      "failures": 37,
+      "failures": 38,
       "title": "Google",
       "description": "Search the world",
       "category": "software",
@@ -30,6 +30,16 @@
       "firstSeen": "2026-09-16",
       "live": true,
       "failures": 0
+    },
+    "foodapp.inbitfirm.org": {
+      "firstSeen": "2026-09-30",
+      "live": true,
+      "failures": 0,
+      "title": "Foodapp",
+      "description": "Live system at foodapp.inbitfirm.org.",
+      "category": "software",
+      "image": "assets/img/work/auto/foodapp.jpg",
+      "screenshotAt": "2026-09-30"
     },
     "inbitfirm.org": {
       "firstSeen": "2026-09-16",
