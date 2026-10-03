@@ -5,6 +5,8 @@ const USER_AGENT = 'Mozilla/5.0 (compatible; nana-botwe-portfolio-checker/1.0; +
 // Pages that mean "nothing real is deployed here"
 const PLACEHOLDER = /(resource limit|account (has been )?suspended|default web site page|site not found|cgi-sys|future home of)/i;
 const PLACEHOLDER_TITLE = /(coming soon|under construction|maintenance|parked)/i;
+// A crashed app (PHP errors, failed database connection) must never be screenshotted
+const APP_ERROR = /(\b(fatal error|parse error|warning|notice|deprecated)\b:.{0,300}\bon line \d+|database connection failed|SQLSTATE\[)/i;
 // Unfinished installs must never be advertised
 const SETUP = /\b(setup|install|installer|installation|wizard)\b/i;
 const GENERIC_SEGMENT = /^(home|homepage|welcome|login|log in|sign in|signin|sign-in|staff sign in|dashboard|index|admin|portal|main)$/i;
@@ -126,6 +128,7 @@ export async function checkHost(host: string, domain: string): Promise<CheckResu
     const transient = /resource limit/i.test(`${page.title} ${page.text.slice(0, 600)}`);
     return { ok: false, transient, reason: `placeholder page: ${page.title || 'untitled'}` };
   }
+  if (APP_ERROR.test(page.text.slice(0, 1500))) return { ok: false, transient: true, reason: 'app error page (PHP/database error)' };
   if (PLACEHOLDER_TITLE.test(page.title)) return { ok: false, transient: false, reason: `not launched: ${page.title}` };
   if (SETUP.test(path) || SETUP.test(page.title)) return { ok: false, transient: false, reason: 'setup/installer page' };
   if (page.text.length < 80) return { ok: false, transient: false, reason: 'page has almost no content' };

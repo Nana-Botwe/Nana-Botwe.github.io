@@ -10,6 +10,13 @@
       "live": true,
       "failures": 0
     },
+    "campusapp.inbitfirm.org": {
+      "firstSeen": "2026-10-03",
+      "live": true,
+      "failures": 0,
+      "image": "assets/img/work/auto/campusapp.jpg",
+      "screenshotAt": "2026-10-03"
+    },
     "capecoastmall.inbitfirm.org": {
       "firstSeen": "2026-09-16",
       "live": true,
@@ -18,7 +25,7 @@
     "exams.inbitfirm.org": {
       "firstSeen": "2026-09-19",
       "live": false,
-      "failures": 44,
+      "failures": 45,
       "title": "Google",
       "description": "Search the world",
       "category": "software",
@@ -39,7 +46,7 @@
       "description": "Live system at foodapp.inbitfirm.org.",
       "category": "software",
       "image": "assets/img/work/auto/foodapp.jpg",
-      "screenshotAt": "2026-09-30"
+      "screenshotAt": "2026-10-03"
     },
     "inbitfirm.org": {
       "firstSeen": "2026-09-16",
@@ -51,10 +58,38 @@
       "live": true,
       "failures": 0
     },
+    "inbvoting.inbitfirm.org": {
+      "firstSeen": "2026-10-03",
+      "live": true,
+      "failures": 0,
+      "image": "assets/img/work/auto/inbvoting.jpg",
+      "screenshotAt": "2026-10-03"
+    },
+    "pos.inbitfirm.org": {
+      "firstSeen": "2026-10-03",
+      "live": true,
+      "failures": 0,
+      "image": "assets/img/work/auto/pos.jpg",
+      "screenshotAt": "2026-10-03"
+    },
+    "shs.inbitfirm.org": {
+      "firstSeen": "2026-10-03",
+      "live": true,
+      "failures": 0,
+      "image": "assets/img/work/auto/shs.jpg",
+      "screenshotAt": "2026-10-03"
+    },
     "task.inbitfirm.org": {
       "firstSeen": "2026-09-16",
       "live": true,
       "failures": 0
+    },
+    "universitychat.inbitfirm.org": {
+      "firstSeen": "2026-10-03",
+      "live": true,
+      "failures": 0,
+      "image": "assets/img/work/auto/universitychat.jpg",
+      "screenshotAt": "2026-10-03"
     }
   }
 }

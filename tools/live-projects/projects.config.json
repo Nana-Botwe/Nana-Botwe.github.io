@@ -4,7 +4,19 @@
   "removeAfterFailures": 3,
   "newBadgeDays": 30,
   "screenshotRefreshDays": 60,
-  "ignore": ["www", "mail", "webmail", "cpanel", "whm", "webdisk", "cpcalendars", "cpcontacts", "autodiscover", "autoconfig", "ftp"],
+  "ignore": [
+    "www",
+    "mail",
+    "webmail",
+    "cpanel",
+    "whm",
+    "webdisk",
+    "cpcalendars",
+    "cpcontacts",
+    "autodiscover",
+    "autoconfig",
+    "ftp"
+  ],
   "projects": {
     "inbschool.inbitfirm.org": {
       "order": 1,
@@ -15,8 +27,16 @@
       "image": "assets/img/work/inb-school-system.jpg",
       "alt": "INB School System homepage"
     },
-    "ba.inbitfirm.org": {
+    "shs.inbitfirm.org": {
       "order": 2,
+      "title": "SHS Platform",
+      "kicker": "School management · Parent portal",
+      "category": "software",
+      "description": "Multi-school platform for Ghanaian senior high schools: admissions, attendance with absence alerts to parents, a results approval workflow, fees, boarding and a mobile-first parent portal paid by MoMo.",
+      "alt": "SHS Platform school management and parent portal homepage"
+    },
+    "ba.inbitfirm.org": {
+      "order": 3,
       "title": "Blessed Assurance AG Church System",
       "kicker": "Church administration",
       "category": "software",
@@ -25,7 +45,7 @@
       "alt": "Blessed Assurance AG church system sign-in page"
     },
     "filesystem.inbitfirm.org": {
-      "order": 3,
+      "order": 4,
       "title": "File System Management",
       "kicker": "Document management",
       "category": "software",
@@ -34,7 +54,7 @@
       "alt": "File System Management sign-in page"
     },
     "task.inbitfirm.org": {
-      "order": 4,
+      "order": 5,
       "title": "KAAF Task System",
       "kicker": "KAAF University · ICT Office",
       "category": "software",
@@ -42,8 +62,32 @@
       "image": "assets/img/work/kaaf-task-system.jpg",
       "alt": "KAAF Task System sign-in page"
     },
+    "universitychat.inbitfirm.org": {
+      "order": 6,
+      "title": "INB Uni System",
+      "kicker": "University communication",
+      "category": "software",
+      "description": "The university channel of communication: students and staff sign in with their index number or staff ID, and new users set up an account by scanning a QR code on their phone.",
+      "alt": "INB Uni System sign-in page"
+    },
+    "inbvoting.inbitfirm.org": {
+      "order": 7,
+      "title": "INB Voting System",
+      "kicker": "Student elections",
+      "category": "software",
+      "description": "Online voting for student elections: one voter, one vote, sign-in by Voter ID with password or fingerprint, candidate profiles, and live counting with results published when voting closes.",
+      "alt": "INB Voting System sign-in page for a student election"
+    },
+    "pos.inbitfirm.org": {
+      "order": 8,
+      "title": "StoreMaster POS",
+      "kicker": "Point of sale · Retail",
+      "category": "software",
+      "description": "Point of sale, inventory, accounting and customer credit for Ghanaian supermarkets, provision stores and wholesalers, with multi-branch stock and reports, and it keeps selling when the internet is down.",
+      "alt": "StoreMaster POS product homepage"
+    },
     "capecoastmall.inbitfirm.org": {
-      "order": 5,
+      "order": 9,
       "title": "Cape Coast Mall",
       "kicker": "Multi-store marketplace",
       "category": "ecommerce",
@@ -51,8 +95,24 @@
       "image": "assets/img/work/cape-coast-mall.jpg",
       "alt": "Cape Coast Mall online shop homepage"
     },
+    "campusapp.inbitfirm.org": {
+      "order": 10,
+      "title": "Uni-Marketplace",
+      "kicker": "Campus super app",
+      "category": "ecommerce",
+      "description": "All-in-one campus platform: a student marketplace, food delivery, hostel booking, student jobs, tutors, ride sharing, clubs and events, paid through an escrow-protected wallet.",
+      "alt": "Uni-Marketplace campus super app homepage"
+    },
+    "foodapp.inbitfirm.org": {
+      "order": 11,
+      "title": "INB Eats",
+      "kicker": "Food delivery",
+      "category": "ecommerce",
+      "description": "Campus food delivery: browse restaurants and meals by category, see delivery times, order online and rate every order.",
+      "alt": "INB Eats food delivery homepage"
+    },
     "afridaimport.inbitfirm.org": {
-      "order": 6,
+      "order": 12,
       "title": "AD Afida Import",
       "kicker": "Import & wholesale store",
       "category": "ecommerce",
@@ -61,7 +121,7 @@
       "alt": "AD Afida Import storefront homepage"
     },
     "inbitfirm.org": {
-      "order": 7,
+      "order": 13,
       "title": "INB IT Firm",
       "kicker": "Company website",
       "category": "web",
