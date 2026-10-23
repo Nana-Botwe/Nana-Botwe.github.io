@@ -25,7 +25,7 @@
     "exams.inbitfirm.org": {
       "firstSeen": "2026-09-19",
       "live": false,
-      "failures": 113,
+      "failures": 114,
       "title": "Google",
       "description": "Search the world",
       "category": "software",
@@ -64,6 +64,16 @@
       "failures": 0,
       "image": "assets/img/work/auto/inbvoting.jpg",
       "screenshotAt": "2026-10-03"
+    },
+    "maxtezz.inbitfirm.org": {
+      "firstSeen": "2026-10-23",
+      "live": true,
+      "failures": 0,
+      "title": "Macstezz Food",
+      "description": "Jollof, grills, soups and local favourites, cooked fresh every day. Dine in, take away, order ahead or book a table.",
+      "category": "software",
+      "image": "assets/img/work/auto/maxtezz.jpg",
+      "screenshotAt": "2026-10-23"
     },
     "pos.inbitfirm.org": {
       "firstSeen": "2026-10-03",
