@@ -25,7 +25,7 @@
     "exams.inbitfirm.org": {
       "firstSeen": "2026-09-19",
       "live": false,
-      "failures": 136,
+      "failures": 137,
       "title": "Google",
       "description": "Search the world",
       "category": "software",
@@ -69,7 +69,7 @@
       "firstSeen": "2026-10-23",
       "live": true,
       "failures": 0,
-      "title": "Macstezz Food",
+      "title": "Mcsteeze Lounge & Restaurant",
       "description": "Jollof, grills, soups and local favourites, cooked fresh every day. Dine in, take away, order ahead or book a table.",
       "category": "software",
       "image": "assets/img/work/auto/maxtezz.jpg",
