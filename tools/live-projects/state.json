@@ -5,6 +5,16 @@
       "live": true,
       "failures": 0
     },
+    "automobile.inbitfirm.org": {
+      "firstSeen": "2026-11-15",
+      "live": true,
+      "failures": 0,
+      "title": "AutoFlow Motors",
+      "description": "Browse quality cars for sale and rent, and book a professional car wash online with live bay availability.",
+      "category": "software",
+      "image": "assets/img/work/auto/automobile.jpg",
+      "screenshotAt": "2026-11-15"
+    },
     "ba.inbitfirm.org": {
       "firstSeen": "2026-09-16",
       "live": true,
@@ -25,7 +35,7 @@
     "exams.inbitfirm.org": {
       "firstSeen": "2026-09-19",
       "live": false,
-      "failures": 176,
+      "failures": 177,
       "title": "Google",
       "description": "Search the world",
       "category": "software",
@@ -81,6 +91,16 @@
       "failures": 0,
       "image": "assets/img/work/auto/pos.jpg",
       "screenshotAt": "2026-10-03"
+    },
+    "restaurant.inbitfirm.org": {
+      "firstSeen": "2026-11-15",
+      "live": true,
+      "failures": 0,
+      "title": "Restaurant Food",
+      "description": "Jollof, grills, soups and local favourites, cooked fresh every day. Dine in, take away, order ahead or book a table.",
+      "category": "software",
+      "image": "assets/img/work/auto/restaurant.jpg",
+      "screenshotAt": "2026-11-15"
     },
     "restpos.inbitfirm.org": {
       "firstSeen": "2026-10-26",
