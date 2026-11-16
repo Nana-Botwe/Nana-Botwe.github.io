@@ -20,6 +20,16 @@
       "live": true,
       "failures": 0
     },
+    "blogsite.inbitfirm.org": {
+      "firstSeen": "2026-11-16",
+      "live": true,
+      "failures": 0,
+      "title": "INB Blogsite",
+      "description": "News, ideas and stories worth sharing",
+      "category": "software",
+      "image": "assets/img/work/auto/blogsite.jpg",
+      "screenshotAt": "2026-11-16"
+    },
     "campusapp.inbitfirm.org": {
       "firstSeen": "2026-10-03",
       "live": true,
@@ -35,7 +45,7 @@
     "exams.inbitfirm.org": {
       "firstSeen": "2026-09-19",
       "live": false,
-      "failures": 179,
+      "failures": 180,
       "title": "Google",
       "description": "Search the world",
       "category": "software",
