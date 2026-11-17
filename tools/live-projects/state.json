@@ -45,7 +45,7 @@
     "exams.inbitfirm.org": {
       "firstSeen": "2026-09-19",
       "live": false,
-      "failures": 181,
+      "failures": 182,
       "title": "Google",
       "description": "Search the world",
       "category": "software",
